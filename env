@@ -1,0 +1,2 @@
+S3BUCKET=s3://examplebucket/
+UPLOAD_LIMIT=200k

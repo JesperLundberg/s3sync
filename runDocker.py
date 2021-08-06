@@ -6,9 +6,8 @@ from dockerUtilities import container_exist
 from dockerUtilities import remove_container
 
 def run_docker(container_name, release, path_to_bind):
-    command = "docker run -d --mount type=bind,source=" +\
-    path_to_bind +\
-    ",target=/upload/,readonly --name " + container_name + " " +\
+    command = "docker run -d --env-file ./env --mount type=bind,source=" +\
+    path_to_bind + ",target=/upload/,readonly --name " + container_name + " " +\
     container_name + ":" + release
     result = os.system(command)
 
