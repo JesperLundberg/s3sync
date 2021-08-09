@@ -1,8 +1,7 @@
-FROM python:3.8.11-alpine3.14
+FROM python:3.9-alpine
 
-COPY .s3cfg /root/
-COPY s3Sync.py .
-COPY dockerUtilities.py .
+COPY /publish/.s3cfg /root/
+COPY /publish/ .
 
 RUN pip install s3cmd
 

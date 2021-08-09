@@ -1,5 +1,4 @@
 import os
-from dockerUtilities import get_value
 
 def get_environment_value(variable_name):
     return os.getenv(variable_name)
