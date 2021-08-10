@@ -1,7 +1,7 @@
 version: "3.7"
 services:
-    s3upload:
-        container_name: s3upload
+    uploader:
+        container_name: s3sync
         build: .
         env_file: env
         volumes: 
