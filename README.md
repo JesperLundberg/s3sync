@@ -10,6 +10,10 @@ Change the mount file to reflect the folder where the files to be uploaded are a
 
 Then run the python scripts `buildDocker.py` and `runDocker.py` and it automatically uploads all files locally that does not exist in the bucket.
 
+OR
+
+Use docker-compose by changing the volume and the bucket name and then running `docker-compose up -d`.
+
 # Requirements
 
 - Python 3
