@@ -1,0 +1,8 @@
+version: "3.7"
+services:
+    s3upload:
+        container_name: s3upload
+        build: .
+        env_file: env
+        volumes: 
+            - ~/:/upload/
