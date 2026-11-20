@@ -4,17 +4,14 @@ Small container for uploading files to an s3 bucket using s3cmd (https://s3tools
 
 # Usage
 
-Get the settings and private keys and set them in .s3cfg and make sure python is installed.
+Get the settings and private keys and set them in `publish/.s3cfg`.
 
-Change the mount file to reflect the folder where the files to be uploaded are and set the S3BUCKET in env-file to the s3bucket to upload to.
+Set `S3BUCKET` in the `env` file to the bucket to upload to, and set `MOUNT_PATH` (in your shell or in a `.env` file) to the folder with the files to upload. It defaults to `~/` and is mounted read-only.
 
-Then run the python scripts `buildDocker.py` and `runDocker.py` and it automatically uploads all files locally that does not exist in the bucket.
+Then run `docker compose up --build` (add `-d` to run in the background). All local files that do not exist in the bucket are uploaded.
 
-OR
-
-Use docker-compose by changing the volume and the bucket name and then running `docker-compose up -d`.
+Clean up with `docker compose down --rmi local`.
 
 # Requirements
 
-- Python 3
-- Docker
+- Docker with the Compose plugin
