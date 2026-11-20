@@ -1,8 +1,8 @@
-FROM python:3.9-alpine
+FROM alpine:latest
+
+RUN apk add --no-cache s3cmd
 
 COPY /publish/.s3cfg /root/
-COPY /publish/ .
+COPY /publish/s3sync.sh /s3sync.sh
 
-RUN pip install s3cmd
-
-ENTRYPOINT ["python3", "s3Sync.py"]
+ENTRYPOINT ["sh", "/s3sync.sh"]
